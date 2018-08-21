@@ -1,0 +1,34 @@
+{
+  "name": "@tilecloud/mbgl-circle-marker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/mbgl-circle-marker.js",
+  "scripts": {
+    "start": "cd docs && http-server -o",
+    "watch": "parcel -d ${TMPDIR} example/index.html --open",
+    "build": "npm run build:lib && npm run build:site",
+    "build:lib": "npm test && microbundle build src/index.js -o dist -f cjs",
+    "build:site": "rm -fr docs && parcel build -d docs example/index.html --public-url '.' && touch docs/.nojekyll",
+    "test": "eslint \"src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tilecloud/mapbox-gl-tilecloud-control.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tilecloud/mbgl-circle-marker/issues"
+  },
+  "homepage": "https://github.com/tilecloud/mbgl-circle-marker#readme",
+  "devDependencies": {
+    "@tilecloud/mbgl-export-control": "^0.3.7",
+    "@tilecloud/mbgl-fork-me-control": "^0.2.4",
+    "@tilecloud/mbgl-tilecloud-control": "^0.3.4",
+    "babel-polyfill": "^6.26.0",
+    "eslint": "^5.3.0",
+    "http-server": "^0.11.1",
+    "microbundle": "^0.6.0",
+    "parcel": "^1.9.7"
+  }
+}
