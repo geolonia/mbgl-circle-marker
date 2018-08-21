@@ -27,6 +27,7 @@ map.addControl(new ExportControl({
 new CircleMarker({
   id: "example-1",
   minzoom: 7,
+  textFont: ["Open Sans Semibold", "Arial Unicode MS Bold"],
   markers: [
     {
       lnglat: [139.741355, 35.658094],
@@ -54,12 +55,13 @@ new CircleMarker({
   circleStrokeWidth: 100,
   circleRadius: 10,
   textSize: 30,
+  textFont: ["Open Sans Semibold", "Arial Unicode MS Bold"],
   markers: [
     {
       lnglat: [139.741355, 35.658094],
       label: "日本",
       color: "#ff0000",
-      strokeColor: "rgba(255, 0, 0, 0.2)",
+      strokeColor: "rgba(255, 0, 0, 0.2)"
     },
   ]
 }).addTo(map)
