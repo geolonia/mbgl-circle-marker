@@ -27,7 +27,6 @@ map.addControl(new ExportControl({
 new CircleMarker({
   id: "example-1",
   minzoom: 7,
-  textFont: ["noto-sans-cjk-jp-demi-light"],
   markers: [
     {
       lnglat: [139.741355, 35.658094],
@@ -55,7 +54,6 @@ new CircleMarker({
   circleStrokeWidth: 100,
   circleRadius: 10,
   textSize: 30,
-  textFont: ["noto-sans-cjk-jp-demi-light"],
   markers: [
     {
       lnglat: [139.741355, 35.658094],

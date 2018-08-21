@@ -7,6 +7,7 @@ class CircleMarker {
         minzoom: 0,
         maxzoom: 22,
         textSize: 14,
+        textFont: ['Noto Sans Regular'],
         circleRadius: 6,
         circleStrokeWidth: 6,
         markers: [],
@@ -56,6 +57,28 @@ class CircleMarker {
         },
       });
 
+      // map.addLayer({
+      //   "id": `${this.options.id}-label`,
+      //   "type": "symbol",
+      //   "minzoom": this.options.minzoom,
+      //   "maxzoom": this.options.maxzoom,
+      //   "source": this.options.id,
+      //   "paint": {
+      //     "text-color": "#000000",
+      //     "text-halo-color": "rgba(255, 255, 255, 1)",
+      //     "text-halo-width": 2,
+      //   },
+      //   "layout": {
+      //     "text-field": String.fromCharCode(59651),
+      //     "text-font": ["maki"],
+      //     "text-size": this.options.textSize,
+      //     "text-anchor": "top",
+      //     "text-max-width": 12,
+      //     "text-offset": [0, 1],
+      //     "text-allow-overlap": false,
+      //   }
+      // });
+
       map.addLayer({
         "id": `${this.options.id}-label`,
         "type": "symbol",
@@ -68,7 +91,7 @@ class CircleMarker {
           "text-halo-width": 2,
         },
         "layout": {
-          "icon-image": "airport-15",
+          "icon-image": "{icon}-15",
           "text-field": "{label}",
           "text-font": this.options.textFont,
           "text-size": this.options.textSize,
