@@ -7,7 +7,7 @@ class CircleMarker {
         minzoom: 0,
         maxzoom: 22,
         textFont: ['Noto Sans Regular'],
-        textSize: 14,
+        textSize: 12,
         textOffset: [0, 1],
         textMaxWidth: 12,
         markers: [],
@@ -23,8 +23,8 @@ class CircleMarker {
       const props = Object.assign({
         color: "#555555",
         strokeColor: "#555555",
-        circleStrokeWidth: 6,
-        circleRadius: 6,
+        circleStrokeWidth: 3,
+        circleRadius: 3,
         icon: ""
       }, options.markers[i])
 
@@ -78,7 +78,7 @@ class CircleMarker {
           "text-anchor": "top",
           "text-max-width": this.options.textMaxWidth,
           "text-offset": this.options.textOffset,
-          "text-allow-overlap": false,
+          "text-allow-overlap": true,
         }
       });
 

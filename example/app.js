@@ -51,6 +51,10 @@ new CircleMarker({
       color: "transparent",
       strokeColor: "#cccccc",
       circleStrokeWidth: 20,
-    }
+    },
+    {
+      lnglat: [139.648849, 35.856999],
+      label: "埼玉県",
+    },
   ]
 }).addTo(map)
