@@ -3,7 +3,7 @@ import 'babel-polyfill'
 import TileCloudControl from '@tilecloud/mbgl-tilecloud-control'
 import ForkMeConntrol from '@tilecloud/mbgl-fork-me-control'
 import ExportControl from '@tilecloud/mbgl-export-control'
-import CircleMarker from '../dist/mbgl-circle-marker'
+import CircleMarker from '../src'
 
 const map = new mapboxgl.Map({
   container: 'map',
