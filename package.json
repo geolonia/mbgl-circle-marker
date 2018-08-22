@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/tilecloud/mbgl-circle-marker#readme",
   "devDependencies": {
-    "@tilecloud/mbgl-export-control": "^0.3.7",
+    "@tilecloud/mbgl-export-control": "^0.3.8",
     "@tilecloud/mbgl-fork-me-control": "^0.2.4",
     "@tilecloud/mbgl-tilecloud-control": "^0.3.4",
     "babel-polyfill": "^6.26.0",
