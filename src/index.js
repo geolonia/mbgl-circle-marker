@@ -6,10 +6,10 @@ class CircleMarker {
         id: "",
         minzoom: 0,
         maxzoom: 22,
-        textSize: 14,
         textFont: ['Noto Sans Regular'],
-        circleRadius: 6,
-        circleStrokeWidth: 6,
+        textSize: 14,
+        textOffset: [0, 1],
+        textMaxWidth: 12,
         markers: [],
       }, options
     )
@@ -23,6 +23,9 @@ class CircleMarker {
       const props = Object.assign({
         color: "#555555",
         strokeColor: "#555555",
+        circleStrokeWidth: 6,
+        circleRadius: 6,
+        icon: ""
       }, options.markers[i])
 
       this.geojson.features.push({
@@ -50,34 +53,12 @@ class CircleMarker {
         "maxzoom": this.options.maxzoom,
         "source": this.options.id,
         "paint": {
-          "circle-radius": this.options.circleRadius,
+          "circle-radius": ["to-number", ["get", "circleRadius"]],
           "circle-color": {"type": "identity", "property": "color"},
-          "circle-stroke-width": this.options.circleStrokeWidth,
+          "circle-stroke-width": ["to-number", ["get", "circleStrokeWidth"]],
           "circle-stroke-color": {"type": "identity", "property": "strokeColor"}
         },
       });
-
-      // map.addLayer({
-      //   "id": `${this.options.id}-label`,
-      //   "type": "symbol",
-      //   "minzoom": this.options.minzoom,
-      //   "maxzoom": this.options.maxzoom,
-      //   "source": this.options.id,
-      //   "paint": {
-      //     "text-color": "#000000",
-      //     "text-halo-color": "rgba(255, 255, 255, 1)",
-      //     "text-halo-width": 2,
-      //   },
-      //   "layout": {
-      //     "text-field": String.fromCharCode(59651),
-      //     "text-font": ["maki"],
-      //     "text-size": this.options.textSize,
-      //     "text-anchor": "top",
-      //     "text-max-width": 12,
-      //     "text-offset": [0, 1],
-      //     "text-allow-overlap": false,
-      //   }
-      // });
 
       map.addLayer({
         "id": `${this.options.id}-label`,
@@ -91,14 +72,24 @@ class CircleMarker {
           "text-halo-width": 2,
         },
         "layout": {
-          "icon-image": "{icon}-15",
           "text-field": "{label}",
           "text-font": this.options.textFont,
           "text-size": this.options.textSize,
           "text-anchor": "top",
-          "text-max-width": 12,
-          "text-offset": [0, 1],
+          "text-max-width": this.options.textMaxWidth,
+          "text-offset": this.options.textOffset,
           "text-allow-overlap": false,
+        }
+      });
+
+      map.addLayer({
+        "id": `${this.options.id}-licon`,
+        "type": "symbol",
+        "minzoom": this.options.minzoom,
+        "maxzoom": this.options.maxzoom,
+        "source": this.options.id,
+        "layout": {
+          "icon-image": "{icon}",
         }
       });
     })

@@ -31,37 +31,26 @@ new CircleMarker({
     {
       lnglat: [139.741355, 35.658094],
       label: "東京都",
-      color: "#cccccc",
-      strokeColor: "#cccccc",
+      color: "rgba(255, 0, 0, 0.5)",
+      strokeColor: "#555555",
+      circleStrokeWidth: 10,
+      circleRadius: 20,
     },
     {
       lnglat: [139.642345, 35.447507],
       label: "神奈川県",
-      color: "#0000ff",
+      color: "#ffffff",
+      strokeColor: "#555555",
+      icon: "star-11",
+      circleStrokeWidth: 2,
+      circleRadius: 10,
     },
     {
       lnglat: [140.123306, 35.605057],
       label: "千葉県",
       color: "transparent",
       strokeColor: "#cccccc",
+      circleStrokeWidth: 20,
     }
   ]
 }).addTo(map)
-
-new CircleMarker({
-  id: "example-2",
-  maxzoom: 7,
-  circleStrokeWidth: 100,
-  circleRadius: 10,
-  textSize: 30,
-  markers: [
-    {
-      lnglat: [139.741355, 35.658094],
-      label: "日本",
-      color: "#ff0000",
-      strokeColor: "rgba(255, 0, 0, 0.2)"
-    },
-  ]
-}).addTo(map)
-
-
