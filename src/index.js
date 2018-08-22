@@ -72,6 +72,7 @@ class CircleMarker {
           "text-halo-width": 2,
         },
         "layout": {
+          "icon-image": "{icon}",
           "text-field": "{label}",
           "text-font": this.options.textFont,
           "text-size": this.options.textSize,
@@ -79,17 +80,6 @@ class CircleMarker {
           "text-max-width": this.options.textMaxWidth,
           "text-offset": this.options.textOffset,
           "text-allow-overlap": true,
-        }
-      });
-
-      map.addLayer({
-        "id": `${this.options.id}-licon`,
-        "type": "symbol",
-        "minzoom": this.options.minzoom,
-        "maxzoom": this.options.maxzoom,
-        "source": this.options.id,
-        "layout": {
-          "icon-image": "{icon}",
         }
       });
     })
